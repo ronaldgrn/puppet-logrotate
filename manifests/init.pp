@@ -87,19 +87,19 @@
 #
 #
 class logrotate (
-  $my_class            = params_lookup( 'my_class' ),
-  $source              = params_lookup( 'source' ),
-  $source_dir          = params_lookup( 'source_dir' ),
-  $source_dir_purge    = params_lookup( 'source_dir_purge' ),
-  $template            = params_lookup( 'template' ),
-  $options             = params_lookup( 'options' ),
-  $version             = params_lookup( 'version' ),
-  $absent              = params_lookup( 'absent' ),
-  $audit_only          = params_lookup( 'audit_only' , 'global' ),
-  $noops               = params_lookup( 'noops' ),
-  $package             = params_lookup( 'package' ),
-  $config_dir          = params_lookup( 'config_dir' ),
-  $config_file         = params_lookup( 'config_file' )
+  $my_class            = $::logrotate::params::my_class,
+  $source              = $::logrotate::params::source,
+  $source_dir          = $::logrotate::params::source_dir,
+  $source_dir_purge    = $::logrotate::params::source_dir_purge,
+  $template            = $::logrotate::params::template,
+  $options             = $::logrotate::params::options,
+  $version             = $::logrotate::params::version,
+  $absent              = $::logrotate::params::absent,
+  $audit_only          = $::logrotate::params::audit_only,
+  $noops               = $::logrotate::params::noops,
+  $package             = $::logrotate::params::package,
+  $config_dir          = $::logrotate::params::config_dir,
+  $config_file         = $::logrotate::params::config_file
   ) inherits logrotate::params {
 
   $config_file_mode=$logrotate::params::config_file_mode
