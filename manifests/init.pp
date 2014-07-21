@@ -106,9 +106,9 @@ class logrotate (
   $config_file_owner=$logrotate::params::config_file_owner
   $config_file_group=$logrotate::params::config_file_group
 
-  $bool_source_dir_purge=any2bool($source_dir_purge)
-  $bool_absent=any2bool($absent)
-  $bool_audit_only=any2bool($audit_only)
+  $bool_source_dir_purge=$source_dir_purge
+  $bool_absent=$absent
+  $bool_audit_only=$audit_only
 
   ### Definition of some variables used in the module
   $manage_package = $logrotate::bool_absent ? {
