@@ -99,7 +99,8 @@ class logrotate (
   $noops               = $::logrotate::params::noops,
   $package             = $::logrotate::params::package,
   $config_dir          = $::logrotate::params::config_dir,
-  $config_file         = $::logrotate::params::config_file
+  $config_file         = $::logrotate::params::config_file,
+  $old_config_dir,
   ) inherits logrotate::params {
 
   $config_file_mode=$logrotate::params::config_file_mode

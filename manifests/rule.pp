@@ -411,6 +411,10 @@ define logrotate::rule(
     false => $ensure,
   }
 
+  file { "${logrotate::old_config_dir}/${name}":
+    ensure => absent
+  }
+  ->
   file { "${logrotate::config_dir}/${name}":
     ensure  => $real_ensure,
     path    => "${logrotate::config_dir}/${name}",
