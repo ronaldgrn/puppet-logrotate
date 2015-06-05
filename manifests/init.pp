@@ -143,8 +143,8 @@ class logrotate (
 
   ### Managed resources
   package { $logrotate::package:
-    ensure  => $logrotate::manage_package,
-    noop    => $logrotate::noops,
+    ensure => $logrotate::manage_package,
+    noop   => $logrotate::noops,
   }
 
   file { 'logrotate.conf':
@@ -159,6 +159,12 @@ class logrotate (
     replace => $logrotate::manage_file_replace,
     audit   => $logrotate::manage_audit,
     noop    => $logrotate::noops,
+  }
+
+  ### Create instances for integration with Hiera
+  if $files != {} {
+    validate_hash($files)
+    create_resources(logrotate::file, $files)
   }
 
   # The whole logrotate configuration directory can be recursively overriden
