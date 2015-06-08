@@ -174,7 +174,6 @@ class logrotate (
       ensure  => directory,
       path    => $logrotate::config_dir,
       require => Package[$logrotate::package],
-      notify  => $logrotate::manage_service_autorestart,
       source  => $logrotate::source_dir,
       recurse => true,
       purge   => $logrotate::bool_source_dir_purge,
