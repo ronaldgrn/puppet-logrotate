@@ -301,7 +301,7 @@ define logrotate::rule(
     }
   }
 
-  case $maxage {
+  case "$maxage" {
     'undef': {}
     /^\d+$/: {}
     default: {
@@ -309,7 +309,7 @@ define logrotate::rule(
     }
   }
 
-  case $minsize {
+  case "$minsize" {
     'undef': {}
     /^\d+[kMG]?$/: {}
     default: {
@@ -317,7 +317,7 @@ define logrotate::rule(
     }
   }
 
-  case $rotate {
+  case "$rotate" {
     'undef': {}
     /^\d+$/: {}
     default: {
@@ -325,7 +325,7 @@ define logrotate::rule(
     }
   }
 
-  case $size {
+  case "$size" {
     'undef': {}
     /^\d+[kMG]?$/: {}
     default: {
@@ -333,7 +333,7 @@ define logrotate::rule(
     }
   }
 
-  case $shredcycles {
+  case "$shredcycles" {
     'undef': {}
     /^\d+$/: {}
     default: {
@@ -341,7 +341,7 @@ define logrotate::rule(
     }
   }
 
-  case $start {
+  case "$start" {
     'undef': {}
     /^\d+$/: {}
     default: {
