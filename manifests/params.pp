@@ -43,7 +43,7 @@ class logrotate::params {
   # General Settings
   $my_class = ''
   $source = ''
-  $source_dir = ''
+  $source_dir = false
   $source_dir_purge = false
   $template = ''
   $options = ''
